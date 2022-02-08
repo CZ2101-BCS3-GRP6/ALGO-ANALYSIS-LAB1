@@ -1,3 +1,6 @@
+from time import process_time
+
+
 def insertMergeSort(arr, S):
     keyComp = 0
     if len(arr) > S:
@@ -53,6 +56,9 @@ def printList(arr):
     print()
 
 
+# Driver Code
+t1_start = process_time()  #Get start time
+
 if __name__ == '__main__':
     arr = [12, 11, 13, 8, 5, 6, 7, 10]
     print("Given array is", end="\n")
@@ -61,3 +67,8 @@ if __name__ == '__main__':
     print("Sorted array with insertMergeSort is: ", end="\n")
     printList(arr)
     print("No. of key comparisons: ", kc, end="\n")
+
+t1_stop = process_time()  #Get end time
+
+print("Elapsed time during the whole program in seconds:",
+      t1_stop - t1_start)  #Elapsed Time
