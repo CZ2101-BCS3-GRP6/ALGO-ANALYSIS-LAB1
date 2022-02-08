@@ -5,8 +5,9 @@ Created on Tue Feb  8 20:03:33 2022
 
 @author: pangchenghao
 """
-import numpy as np
+
 from time import process_time
+import random
 
 # Python program for implementation of MergeSort
 def mergeSort(arr):
@@ -71,18 +72,20 @@ def printList(arr):
 t1_start = process_time() #Get start time
 
 if __name__ == '__main__':
-    np.random.seed(0)
-    arr = np.random.randint(1,26,10) #Random array failed?
+    
+    arr=[]
+    for i in range(0, 10):
+      arr.append(random.randint(1, 26)) 
     print("Given array is", end="\n")
     printList(arr)
     kc = mergeSort(arr)
-    print("Sorted array is: ", end="\n")
+    print("Sorted array with MergeSort is: ", end="\n")
     printList(arr)
     print("No. of key comparisons: ", kc, end="\n")
 print("\n")
 
 if __name__ == '__main__':
-    arr = [13, 16, 22, 1, 4, 4, 8, 10, 20, 22 ]
+    arr = [16, 22, 7, 25, 9, 24, 19, 16, 1, 1 ]
     print("Given array is", end="\n")
     printList(arr)
     kc = mergeSort(arr)
@@ -92,7 +95,7 @@ if __name__ == '__main__':
 print("\n")    
 
 if __name__ == '__main__':
-    arr = [8,7,5,9,1,7,8,2,8,4]
+    arr = [90,25,10,71,94,22,59,74]
     print("Given array is", end="\n")
     printList(arr)
     kc = mergeSort(arr)
