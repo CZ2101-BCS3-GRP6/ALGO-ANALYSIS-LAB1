@@ -1,4 +1,5 @@
 from time import process_time
+import random
 
 
 def insertMergeSort(arr, S):
@@ -59,11 +60,17 @@ def printList(arr):
 # Driver Code
 t1_start = process_time()  #Get start time
 
+
+def generateData(size):
+    return [random.randrange(1, size, 1) for i in range(size)]
+
+
 if __name__ == '__main__':
     arr = [12, 11, 13, 8, 5, 6, 7, 10]
+    bigArr = generateData(100000)
     print("Given array is", end="\n")
     printList(arr)
-    kc = insertMergeSort(arr, 4)
+    kc = insertMergeSort(bigArr, 4)
     print("Sorted array with insertMergeSort is: ", end="\n")
     printList(arr)
     print("No. of key comparisons: ", kc, end="\n")
